@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown, Star, Archive, Trash2, Folder, Film, Layout, PlaySquare, Clapperboard, PlayCircle, Shirt, Video } from 'lucide-react';
 import './index.css';
 
@@ -609,7 +609,10 @@ export default function App() {
             <div className="relative pointer-events-auto">
               {showSearchTooltip && (
                 <div className="absolute bottom-[75px] right-0 bg-[#323232] text-white shadow-2xl rounded-2xl py-2.5 pl-4 pr-10 flex items-center gap-2 min-w-max border border-[#444] z-30 animate-fade-in">
-                  <span className="text-[13px] font-semibold tracking-wide">Try new ways to search âœ¨</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[13px] font-semibold tracking-wide">Try new ways to search</span>
+                    <Sparkles size={14} className="text-white" />
+                  </div>
                   <button 
                     onClick={(e) => { e.stopPropagation(); setShowSearchTooltip(false); }} 
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
